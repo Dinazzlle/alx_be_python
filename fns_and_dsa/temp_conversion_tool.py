@@ -1,16 +1,14 @@
 # Global conversion factors
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
-CELSIUS_OFFSET = 32  # Constant offset for Celsius to Fahrenheit conversion
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9   # Factor for converting Fahrenheit to Celsius
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5    # Factor for converting Celsius to Fahrenheit
+CELSIUS_OFFSET = 32                     # Constant offset for conversion
 
 # Function to convert Fahrenheit to Celsius
 def convert_to_celsius(fahrenheit):
-    # Use the global conversion factor to convert
     return (fahrenheit - CELSIUS_OFFSET) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 # Function to convert Celsius to Fahrenheit
 def convert_to_fahrenheit(celsius):
-    # Use the global conversion factor to convert
     return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + CELSIUS_OFFSET
 
 def main():
@@ -27,10 +25,10 @@ def main():
         # Perform the conversion based on the user's input
         if unit == 'F':
             converted_temp = convert_to_celsius(temp)
-            print(f"{temp}°F is {converted_temp}°C")
+            print(f"{temp}°F is {converted_temp:.2f}°C")  # Format output to two decimal places
         elif unit == 'C':
             converted_temp = convert_to_fahrenheit(temp)
-            print(f"{temp}°C is {converted_temp}°F")
+            print(f"{temp}°C is {converted_temp:.2f}°F")  # Format output to two decimal places
         else:
             print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
     
